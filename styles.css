@@ -48,8 +48,8 @@ body {
 }
 
 .icons img {
-    width: 60px;
-    height: 60px;
+    width: 95px;
+    height: 70px;
 }
 
 .projetos {
@@ -61,9 +61,10 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    max-width: 500px;
+    width: 100%;
+    max-width: 500px; /* Limita a largura máxima */
     margin: auto;
-    overflow: hidden;
+    overflow: hidden; /* Garante que as imagens não saiam da área visível */
 }
 
 .slides {
@@ -72,7 +73,17 @@ body {
 }
 
 .slide {
-    min-width: 100%;
+    min-width: 100%; /* Garante que cada slide ocupe 100% da largura visível */
+    height: 300px; /* Define uma altura fixa para manter consistência */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide img {
+    width: 100%; /* Faz a imagem ocupar toda a largura do slide */
+    height: 100%; /* Faz a imagem ocupar toda a altura do slide */
+    object-fit: cover; /* Evita distorção da imagem, cortando ela se necessário */
 }
 
 button {
@@ -84,6 +95,7 @@ button {
     border: none;
     padding: 10px;
     cursor: pointer;
+    z-index: 1; /* Garante que os botões fiquem acima das imagens */
 }
 
 .prev {
@@ -94,14 +106,18 @@ button {
     right: 10px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
     .foto img {
         width: 120px;
         height: 120px;
     }
-    
+
     .icons img {
-        width: 50px;
-        height: 50px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .carrossel {
+        max-width: 100%; /* Ajusta a largura do carrossel para dispositivos menores */
     }
 }
